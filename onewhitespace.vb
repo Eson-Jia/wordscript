@@ -1,4 +1,4 @@
-Sub OneWhiteSpace() '所有英文标点和后面的单词有且只有一个空格
+Sub OneWhiteSpace() '所有英文单词有且只有一个空格
         Selection.Find.ClearFormatting
         Selection.Find.Replacement.ClearFormatting
         With Selection.Find
