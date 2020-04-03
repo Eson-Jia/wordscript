@@ -1,9 +1,10 @@
 Sub ToggleInterpunction() '中英文标点互换
     Dim ChineseInterpunction() As Variant, EnglishInterpunction() As Variant, strFind As String, strRep As String
     '定义一个中文标点的数组对象
-    ChineseInterpunction = Array("。", "，", "；", "：", "？", "！", "……", "—", "～", "（", "）", "《", "》", "“")
+    ChineseInterpunction = Array("。", "，", "；", "：", "？", "！", "……", "—", "～", "（", "）", "《", "》")
     '定义一个英文标点的数组对象
-    EnglishInterpunction = Array(".", ",", ";", ":", "?", "!", "…", "-", "~", "(", ")", "<", ">", "")
+    '必须将 String 文本用引号引起来（" "）。 如果必须包括引号作为字符串中的字符之一，请使用两个连续的引号（""）。 下面的示例对此进行了演示。
+    EnglishInterpunction = Array(".", ",", ";", ":", "?", "!", "…", "-", "~", "(", ")", "<", ">")
     strFind = "“(*)”"
     strRep = """\1"""
     Application.ScreenUpdating = False '关闭屏幕更新
