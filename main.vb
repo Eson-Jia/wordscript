@@ -1,9 +1,9 @@
 Sub ToggleInterpunction() '中英文标点互换
     Dim ChineseInterpunction() As Variant, EnglishInterpunction() As Variant
     '定义一个中文标点的数组对象
-    ChineseInterpunction = Array("．", "，", "；", "：", "？", "！", "……", "—", "〜", "（", "）")
+    ChineseInterpunction = Array("．", "，", "；", "：", "？", "！", "……", "〜", "（", "）")
     '定义一个英文标点的数组对象
-    EnglishInterpunction = Array(".", ",", ";", ":", "?", "!", "…", "-", "~", "(", ")")
+    EnglishInterpunction = Array(".", ",", ";", ":", "?", "!", "…", "~", "(", ")")
     Application.ScreenUpdating = False '关闭屏幕更新
     For N = 0 To UBound(ChineseInterpunction) '从数组的下标到上标间作一个循环
     With ActiveDocument.Content.Find
