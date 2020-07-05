@@ -95,6 +95,19 @@ Sub RemoveBCDSpace()
     .Execute findtext:=" @([B-D].)", replacewith:=" \1", Replace:=wdReplaceAll
     End With
 End Sub
+
+Sub ReplaceWrongEnter()
+    With ActiveDocument.Content.Find
+    .ClearFormatting
+    .MatchWildcards = True
+    .Execute findtext:="^11", replacewith:="^p", Replace:=wdReplaceAll
+    End With
+End Sub
+Sub ReplaceFont()
+    Selection.SetRange Start:=ActiveDocument.Content.Start, _
+    End:=ActiveDocument.Content.End
+    Selection.Font.Name = "Times New Roman"
+End Sub
 Sub Main()
     ToggleInterpunction
     OneWhiteSpaceAfterSymbol
@@ -105,4 +118,6 @@ Sub Main()
     PruneWithSpaceWithShortLine
     RemoveSpaceBeforeSymbol
     RemoveBCDSpace
+    ReplaceWrongEnter
+    ReplaceFont
 End Sub
