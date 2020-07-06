@@ -13,7 +13,7 @@ match = ('mp3', 'docx')
 notMatchList = []
 
 
-def findSignature(name: str) -> tuple | None:
+def findSignature(name: str) -> tuple:
     m = the_reg.match(name)
     if m:
         return m.groups()  # group 1,2,3,4,5
